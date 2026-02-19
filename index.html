@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>الطرق الحديثة لصناعة الدخل</title>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+<!-- MailerLite Universal -->
+<script>
+    (function(w,d,e,u,f,l,n){w[f]=w[f]||function(){(w[f].q=w[f].q||[])
+    .push(arguments);},l=d.createElement(e),l.async=1,l.src=u,
+    n=d.getElementsByTagName(e)[0],n.parentNode.insertBefore(l,n);})
+    (window,document,'script','https://assets.mailerlite.com/js/universal.js','ml');
+    ml('account', '2126123');
+</script>
+<!-- End MailerLite Universal -->
+<style>
+  :root {
+    --tiffany: #81D8D0;
+    --tiffany-dark: #5ec4bb;
+    --tiffany-light: #b2ebe7;
+    --tiffany-pale: #e8faf9;
+    --white: #ffffff;
+    --glass-bg: rgba(255,255,255,0.55);
+    --glass-border: rgba(255,255,255,0.75);
+    --shadow-soft: 0 8px 40px rgba(129,216,208,0.18);
+    --shadow-card: 0 4px 32px rgba(94,196,187,0.13);
+    --text-dark: #1a3a38;
+    --text-mid: #3a6b68;
+    --text-light: #6fa8a4;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Tajawal', sans-serif;
+    background: linear-gradient(145deg, #c9f0ec 0%, #e8faf9 30%, #b8e8e4 60%, #d4f5f2 100%);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  /* Subtle noise texture overlay */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Decorative blobs */
+  .blob {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(70px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .blob-1 {
+    width: 420px; height: 420px;
+    background: rgba(129,216,208,0.25);
+    top: -100px; right: -100px;
+  }
+  .blob-2 {
+    width: 320px; height: 320px;
+    background: rgba(178,235,231,0.3);
+    bottom: 80px; left: -80px;
+  }
+  .blob-3 {
+    width: 200px; height: 200px;
+    background: rgba(94,196,187,0.2);
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .page-wrapper {
+    position: relative;
+    z-index: 1;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 24px 16px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+  }
+
+  /* ── HEADER / NAV ── */
+  .top-bar {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 12px 0 20px;
+  }
+  .brand-logo {
+    font-size: 1.15rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: 0.5px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(12px);
+    padding: 8px 24px;
+    border-radius: 50px;
+    box-shadow: var(--shadow-soft);
+  }
+  .brand-logo span { color: var(--tiffany-dark); }
+
+  /* ── MAIN GLASS CARD ── */
+  .main-card {
+    width: 100%;
+    background: rgba(255,255,255,0.6);
+    border: 1.5px solid rgba(255,255,255,0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 32px;
+    padding: 32px 24px 36px;
+    box-shadow: 0 12px 60px rgba(129,216,208,0.22), 0 2px 12px rgba(255,255,255,0.5) inset;
+    position: relative;
+    overflow: hidden;
+  }
+  .main-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, var(--tiffany), var(--tiffany-light), transparent);
+    border-radius: 32px 32px 0 0;
+  }
+
+  /* Hero badge */
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: linear-gradient(135deg, var(--tiffany), var(--tiffany-dark));
+    color: white;
+    font-size: 0.72rem;
+    font-weight: 700;
+    padding: 5px 14px;
+    border-radius: 50px;
+    margin: 0 auto 18px;
+    display: flex;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 3px 14px rgba(129,216,208,0.45);
+    animation: pulse-badge 2.5s ease-in-out infinite;
+  }
+  @keyframes pulse-badge {
+    0%,100% { box-shadow: 0 3px 14px rgba(129,216,208,0.45); }
+    50% { box-shadow: 0 3px 22px rgba(129,216,208,0.7); }
+  }
+  .hero-badge::before { content: '✦'; font-size: 0.65rem; }
+
+  /* Hero headline */
+  .hero-headline {
+    font-size: clamp(1.35rem, 5.5vw, 1.7rem);
+    font-weight: 900;
+    color: var(--text-dark);
+    text-align: center;
+    line-height: 1.55;
+    margin-bottom: 12px;
+    letter-spacing: -0.3px;
+  }
+  .hero-headline em {
+    font-style: normal;
+    color: var(--tiffany-dark);
+  }
+
+  .hero-sub {
+    font-size: 1.05rem;
+    color: var(--text-mid);
+    text-align: center;
+    line-height: 1.75;
+    font-weight: 400;
+    margin-bottom: 24px;
+    max-width: 320px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Hero image area */
+  .hero-image-wrap {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .hero-image-frame {
+    width: 200px;
+    height: 240px;
+    border-radius: 24px;
+    background: linear-gradient(145deg, var(--tiffany-light) 0%, var(--tiffany) 50%, var(--tiffany-dark) 100%);
+    position: relative;
+    box-shadow: 0 16px 50px rgba(94,196,187,0.35), 0 2px 8px rgba(255,255,255,0.6) inset;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
+
+  /* SVG woman illustration */
+  .hero-image-frame svg {
+    width: 170px;
+    height: auto;
+    position: relative;
+    z-index: 1;
+  }
+  .hero-image-frame::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 60%;
+    background: linear-gradient(0deg, rgba(94,196,187,0.4) 0%, transparent 100%);
+    z-index: 0;
+  }
+  /* Decorative ring */
+  .hero-ring {
+    position: absolute;
+    width: 230px;
+    height: 270px;
+    border: 1.5px dashed rgba(129,216,208,0.4);
+    border-radius: 28px;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin-slow 20s linear infinite;
+  }
+  @keyframes spin-slow {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+  }
+
+  /* Floating sparkles */
+  .sparkle {
+    position: absolute;
+    color: var(--tiffany);
+    font-size: 1rem;
+    animation: float-sparkle 3s ease-in-out infinite;
+  }
+  .sparkle:nth-child(1) { top: 10px; right: 20px; animation-delay: 0s; }
+  .sparkle:nth-child(2) { top: 30px; left: 10px; font-size: 0.7rem; animation-delay: 1s; }
+  .sparkle:nth-child(3) { bottom: 30px; right: 10px; font-size: 0.8rem; animation-delay: 1.7s; }
+  @keyframes float-sparkle {
+    0%,100% { transform: translateY(0) scale(1); opacity: 0.7; }
+    50% { transform: translateY(-8px) scale(1.2); opacity: 1; }
+  }
+
+  /* CTA Button */
+  .cta-btn {
+    display: block;
+    width: 100%;
+    padding: 18px 24px;
+    background: linear-gradient(135deg, var(--tiffany) 0%, var(--tiffany-dark) 100%);
+    color: white;
+    font-family: 'Tajawal', sans-serif;
+    font-size: 1.35rem;
+    font-weight: 800;
+    text-align: center;
+    border: none;
+    border-radius: 18px;
+    cursor: pointer;
+    box-shadow: 0 8px 30px rgba(94,196,187,0.45), 0 2px 8px rgba(255,255,255,0.3) inset;
+    transition: all 0.25s ease;
+    letter-spacing: 0.3px;
+    position: relative;
+    overflow: hidden;
+    text-decoration: none;
+    margin-top: 4px;
+  }
+  .cta-btn::before {
+    content: '';
+    position: absolute;
+    top: 0; left: -100%;
+    width: 100%; height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.25), transparent);
+    transition: left 0.4s ease;
+  }
+  .cta-btn:hover::before { left: 100%; }
+  .cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 40px rgba(94,196,187,0.55);
+  }
+  .cta-btn:active { transform: translateY(0); }
+  .cta-btn .btn-arrow {
+    display: inline-block;
+    margin-right: 8px;
+    font-size: 1rem;
+    transition: transform 0.2s;
+  }
+  .cta-btn:hover .btn-arrow { transform: translateX(-4px); }
+
+  /* Divider */
+  .section-divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 24px 0 8px;
+  }
+  .section-divider::before, .section-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(129,216,208,0.4), transparent);
+  }
+  .section-divider span {
+    color: var(--tiffany-dark);
+    font-size: 0.88rem;
+  }
+
+  /* ── FEATURES GLASS CARD ── */
+  .features-card {
+    width: 100%;
+    background: rgba(255,255,255,0.5);
+    border: 1.5px solid rgba(255,255,255,0.75);
+    backdrop-filter: blur(16px);
+    border-radius: 24px;
+    padding: 24px 20px 20px;
+    box-shadow: var(--shadow-card);
+    margin-top: 16px;
+  }
+  .features-title {
+    font-size: 1.15rem;
+  }
+  .features-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 20px;
+    background: linear-gradient(180deg, var(--tiffany), var(--tiffany-dark));
+    border-radius: 4px;
+  }
+
+  .pill-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .pill-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: linear-gradient(135deg, rgba(129,216,208,0.1), rgba(255,255,255,0.6));
+    border: 1px solid rgba(129,216,208,0.25);
+    border-radius: 50px;
+    padding: 12px 18px;
+    font-size: 1rem;
+  }
+  .pill-item:nth-child(1) { animation-delay: 0.1s; }
+  .pill-item:nth-child(2) { animation-delay: 0.2s; }
+  .pill-item:nth-child(3) { animation-delay: 0.3s; }
+  .pill-item:nth-child(4) { animation-delay: 0.4s; }
+  @keyframes slide-in {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+  .pill-item:hover {
+    background: linear-gradient(135deg, rgba(129,216,208,0.2), rgba(255,255,255,0.8));
+    border-color: rgba(129,216,208,0.5);
+    transform: translateX(-3px);
+    box-shadow: 0 4px 16px rgba(129,216,208,0.2);
+  }
+  .check-icon {
+    width: 26px;
+    height: 26px;
+    min-width: 26px;
+    background: linear-gradient(135deg, var(--tiffany), var(--tiffany-dark));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.65rem;
+    box-shadow: 0 3px 10px rgba(94,196,187,0.4);
+  }
+
+  /* ── BONUS CARD INLINE ── */
+  .bonus-card-inline {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.65) 0%, rgba(232,250,249,0.7) 100%);
+    border: 1.5px solid rgba(255,255,255,0.8);
+    backdrop-filter: blur(16px);
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: var(--shadow-card);
+    margin-top: 0;
+    margin-bottom: 20px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-direction: row-reverse;
+  }
+  .bonus-card-inline::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(129,216,208,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+  .bonus-badge-inline {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: linear-gradient(135deg, var(--tiffany), var(--tiffany-dark));
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 50px;
+    box-shadow: 0 3px 10px rgba(94,196,187,0.4);
+    letter-spacing: 0.5px;
+    z-index: 1;
+  }
+
+  /* ── BONUS CARD (old outer, keep styles for ebook/text) ── */
+  .bonus-card {
+    width: 100%;
+    background: linear-gradient(135deg, rgba(255,255,255,0.65) 0%, rgba(232,250,249,0.7) 100%);
+    border: 1.5px solid rgba(255,255,255,0.8);
+    backdrop-filter: blur(16px);
+    border-radius: 24px;
+    padding: 20px;
+    box-shadow: var(--shadow-card);
+    margin-top: 16px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-direction: row-reverse;
+  }
+  .bonus-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 120px; height: 120px;
+    background: radial-gradient(circle, rgba(129,216,208,0.15) 0%, transparent 70%);
+    border-radius: 50%;
+  }
+
+  .bonus-badge {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background: linear-gradient(135deg, var(--tiffany), var(--tiffany-dark));
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 800;
+    padding: 4px 10px;
+    border-radius: 50px;
+    box-shadow: 0 3px 10px rgba(94,196,187,0.4);
+    letter-spacing: 0.5px;
+    z-index: 1;
+  }
+
+  /* Ebook mockup */
+  .ebook-mockup {
+    min-width: 80px;
+    width: 80px;
+    height: 105px;
+    border-radius: 8px;
+    background: linear-gradient(145deg, var(--tiffany) 0%, var(--tiffany-dark) 100%);
+    box-shadow: 4px 4px 16px rgba(94,196,187,0.35), -2px -2px 8px rgba(255,255,255,0.5);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    position: relative;
+    overflow: hidden;
+  }
+  .ebook-mockup::before {
+    content: '';
+    position: absolute;
+    right: 0; top: 0; bottom: 0;
+    width: 8px;
+    background: rgba(0,0,0,0.1);
+    border-radius: 0 8px 8px 0;
+  }
+  .ebook-mockup .ebook-icon {
+    font-size: 1.6rem;
+    z-index: 1;
+  }
+  .ebook-mockup .ebook-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    z-index: 1;
+  }
+  .ebook-line {
+    width: 36px;
+    height: 2.5px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 2px;
+  }
+  .ebook-line:nth-child(2) { width: 28px; }
+  .ebook-line:nth-child(3) { width: 32px; }
+
+  .bonus-text { flex: 1; }
+  .bonus-title {
+    font-size: 1.08rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    margin-bottom: 6px;
+    margin-top: 22px;
+    line-height: 1.4;
+  }
+  .bonus-desc {
+    font-size: 0.93rem;
+  }
+
+
+
+  /* ── MAILERLITE EMBED OVERRIDES ── */
+  .ml-embedded {
+    width: 100% !important;
+    margin-top: 4px;
+  }
+  .ml-embedded * {
+    font-family: 'Tajawal', sans-serif !important;
+    direction: rtl !important;
+  }
+  .ml-embedded .ml-form-embedWrapper {
+    border-radius: 18px !important;
+    overflow: hidden !important;
+  }
+  .ml-embedded input[type="email"],
+  .ml-embedded input[type="text"] {
+    border-radius: 12px !important;
+    border: 1.5px solid rgba(129,216,208,0.4) !important;
+    font-family: 'Tajawal', sans-serif !important;
+    font-size: 1rem !important;
+    text-align: right !important;
+  }
+  .ml-embedded input[type="submit"],
+  .ml-embedded button[type="submit"] {
+    background: linear-gradient(135deg, #81D8D0 0%, #5ec4bb 100%) !important;
+    border: none !important;
+    border-radius: 14px !important;
+    font-family: 'Tajawal', sans-serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 800 !important;
+    box-shadow: 0 8px 30px rgba(94,196,187,0.45) !important;
+    cursor: pointer !important;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    width: 100%;
+    text-align: center;
+    padding: 28px 0 8px;
+    font-size: 0.9rem;
+  }
+  footer strong {
+    color: var(--text-mid);
+    font-weight: 700;
+  }
+  footer .footer-divider {
+    width: 40px;
+    height: 1.5px;
+    background: linear-gradient(90deg, transparent, var(--tiffany), transparent);
+    margin: 8px auto;
+    border-radius: 2px;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (min-width: 480px) {
+    .page-wrapper { padding: 32px 24px 48px; }
+    .hero-headline { font-size: 1.85rem; }
+    .hero-image-frame { width: 220px; height: 260px; }
+  }
+
+  /* Entrance animation */
+  .main-card, .features-card, .bonus-card {
+    animation: card-enter 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+  .features-card { animation-delay: 0.15s; }
+  .bonus-card { animation-delay: 0.25s; }
+  @keyframes card-enter {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+</head>
+<body>
+
+<div class="blob blob-1"></div>
+<div class="blob blob-2"></div>
+<div class="blob blob-3"></div>
+
+<div class="page-wrapper">
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="brand-logo">✦</div>
+  </div>
+
+  <!-- Main Hero Card -->
+  <div class="main-card">
+
+    <!-- Badge -->
+    <div class="hero-badge">دورة 2026</div>
+
+    <!-- Headline -->
+    <h1 class="hero-headline">
+      الطرق الحديثة لصناعة الدخل<br>
+      عن طريق <em>السوشل ميديا</em><br>
+      في 2026
+    </h1>
+
+    <!-- Subheadline -->
+    <p class="hero-sub">
+      محتوى مركز ومباشر يساعدك تبدي صح بخطوات واضحة، وبدون تشتت.
+    </p>
+
+    <!-- Bonus Card inline -->
+    <div class="bonus-card-inline">
+      <div class="bonus-badge-inline">✦ بونص حصري</div>
+      <div class="ebook-mockup">
+        <div class="ebook-icon">📖</div>
+        <div class="ebook-lines">
+          <div class="ebook-line"></div>
+          <div class="ebook-line"></div>
+          <div class="ebook-line"></div>
+        </div>
+      </div>
+      <div class="bonus-text">
+        <div class="bonus-title">دليلك المجاني للانطلاق</div>
+        <div class="bonus-desc">
+          ملف PDF مميز يضم أهم الخطوات العملية التي تحتاجها لتبدأ رحلتك بثقة وبدون تشتت.
+        </div>
+      </div>
+    </div>
+
+    <!-- MailerLite Embedded Form -->
+    <div class="ml-embedded" data-form="IU43k7"></div>
+
+    <!-- Section Divider -->
+    <div class="section-divider"><span>ماذا ستتعلمين</span></div>
+
+    <!-- Features Card (inside main card) -->
+    <div class="features-card">
+      <div class="features-title">النقاط:</div>
+      <ul class="pill-list">
+        <li class="pill-item">
+          <div class="check-icon">✓</div>
+          كيف تبدأ من الصفر بدون خبرة.
+        </li>
+        <li class="pill-item">
+          <div class="check-icon">✓</div>
+          الأخطاء التي تمنع المبتدئين من النجاح.
+        </li>
+        <li class="pill-item">
+          <div class="check-icon">✓</div>
+          كيف تبدأ بثقة ووضوح.
+        </li>
+        <li class="pill-item">
+          <div class="check-icon">✓</div>
+          خطوات واضحة وبسيطة للانطلاق.
+        </li>
+      </ul>
+    </div>
+
+  </div><!-- /main-card -->
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-divider"></div>
+    © 2026 — جميع الحقوق محفوظة
+  </footer>
+
+</div><!-- /page-wrapper -->
+
+</body>
+</html>
